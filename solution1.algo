@@ -1,0 +1,24 @@
+ALGORITHM sorting_search
+VAR
+    i,j, x : INTEGER ;
+    arr : ARRAY_OF INTEGER [];
+
+BEGIN
+    FOR i FROM 0 TO arr.length DO
+        Read(arr[i]);
+    END_FOR
+
+    FOR i FROM 1 TO arr.length DO
+        x = arr[i];
+        j:=i-1; 
+        while (j>=0 and arr[j-1]>x)
+            arr[j+1] := arr[j];
+            j:=j-1;
+        end while
+         arr[j+1] := x;
+    END_FOR
+
+    FOR i FROM 1 TO arr.length DO
+        Write(arr[i]);
+    END_FOR
+END
